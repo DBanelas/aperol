@@ -31,9 +31,9 @@ timeliness of APEROL decisions.
  - `optimizer/`: Contains the source code of the optimization algorithms along with the main class (StandaloneRunner).
  - `core/`: Contains some core functionality used by the optimizer (graphs, operators, etc).
  - `workflows/`: Contains the workflow files used in the experiments in two formats: ifogsim and optimizer.'
- - `networks/`: Contains the network configurations (7, 15, 31, 127, 1023, 2047) used in the experiments. 
-Each configuration contains the network graph, the pair hops and the pair latencies between every pair of devices,
-along with the dictionary files for each workflow, that dictate which operators can be executed on each device. 
+ - `networks/`: Contains the network configurations (7, 15, 31, 127, 1023, 2047) used in the experiments for 
+both heterogeneous and homogeneous scenarios. Each configuration contains the network graph and the pair
+latencies between every pair of devices.
  - `models/`: XGBoost models used in the homogeneous experiments. Each network, workflow combination has a model.
  - `distributions/`: Parameters of the distribution that characterize the cost of each plan for each network,
 workflow combination.
@@ -121,7 +121,7 @@ e-rss (Random sampling search), e-hsp (Pareto guided heuristic search), hybrid (
 - **Cost Estimation method: Distributions (Heterogeneous scenario)**
 ```shell
 java -Xmx8g -Xms256m -jar aperol.jar \
---score-calculation-method dist  \
+--cost-calculation-method dist  \
 --network-name $(network-name) \
 --workflow-name $(workflow-name) \
 --workflow-path ./workflows/riot-$(workflow-name)_optimizer.json \
@@ -135,11 +135,12 @@ java -Xmx8g -Xms256m -jar aperol.jar \
 - **Cost Estimation method: model (Homogeneous scenario)** 
 ```shell
 java -Xmx8g -Xms256m -jar aperol.jar \
---score-calculation-method model  \
+--cost-calculation-method model  \
 --network-name $(network-name) \
 --workflow-name $(workflow-name) \
 --workflow-path ./workflows/riot-$(workflow-name)_optimizer.json \
 --network-path ./networks/heterogeneous/net_$(network-name)/network_$(network-name)_1_optimizer.json \
+--model-directory ./models/ \
 --algorithm $(algorithm) \
 --num-iterations 5 \
 --timeout 10000 \
@@ -150,7 +151,7 @@ java -Xmx8g -Xms256m -jar aperol.jar \
 - **Cost Estimation method: dagstar (DAG\* Comparison scenario)**
 ```shell
 java -Xmx8g -Xms256m -jar aperol.jar \
---score-calculation-method dagstar  \
+--cost-calculation-method dagstar  \
 --network-name $(network-name) \
 --workflow-name $(workflow-name) \
 --ifogsim-workflow-path ./workflows/riot-$(workflow-name)-ifogsim.json \
@@ -159,7 +160,6 @@ java -Xmx8g -Xms256m -jar aperol.jar \
 --pairlats-path ./networks/heterogeneous/net_$(network-name)/network_$(network-name)_1_pair_lat.txt \
 --dataset-path ./dag-star-data/$(workflow-name)_xlsx/$(workflow-name)_$(network_name)_avg.xlsx \
 --algorithm $(algorithm) \
---num-iterations $(num-iterations) \
 --timeout 10000 \
 --parallelism 4
 ```

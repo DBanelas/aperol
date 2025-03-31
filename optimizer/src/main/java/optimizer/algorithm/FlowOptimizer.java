@@ -312,11 +312,14 @@ public class FlowOptimizer implements GraphTraversalAlgorithm {
                 throw new IllegalStateException("Default case in switch case.");
         }
 
+        if (costEstimationMethod.equals("dagstar")) {
+            System.out.println("DAG* Workflow cost: " + costEstimation.getRealCost(bestPlan));
+            System.out.println("DAG* Migration cost: " + costEstimation.getMigrationCost(bestPlan));
+        }
+
         //Map Flow optimizer plans to the standard @{OptimizationPlan}
         if (bestPlan != null) {
             int total_cost = this.costEstimation.calculateCost(bestPlan);
-            System.out.println("BEST PLAN REAL COST: " + this.costEstimation.getRealCost(bestPlan));
-            System.out.println("BEST PLAN MIGRATION COST: " + this.costEstimation.getMigrationCost(bestPlan));
 //            int real_cost = getGraphRealCost(bestPlan);
             LinkedHashMap<String, Tuple<String, String>> plan = new LinkedHashMap<>();
             for (Vertex v : bestPlan.getVertices()) {
