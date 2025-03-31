@@ -178,6 +178,6 @@ If the `--percentage` is > 1, then it represents the number of plans to be sampl
 
 
 ## Authors
-- [Dimitrios Banelas](https://www.linkedin.com/in/dimitris-banelas-1129b0182/): estreviniotis [.at] tuc.gr
+- [Dimitrios Banelas](https://www.linkedin.com/in/dimitris-banelas-1129b0182/): dbanelas [.at] tuc.gr
 - Alkis Simitsis: alkis [.at] athenarc.gr
 - Nikos Giatrakos: ngiatrakos [.at] tuc.gr
