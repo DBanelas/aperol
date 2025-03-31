@@ -43,6 +43,9 @@ comparison of APEROL against DAG*.
 
 ## Workflows
 ***
+
+**All workflows are derived from a well known and higly cited benchmark from the smart city domain,
+namely RioTBench: https://github.com/dream-lab/riot-bench**
 - `Extraction, Transfrom & Load (ETL)`: Ingests incoming data streams in SenML format, performs data filtering of
 outliers on individual observation types using a Range and Bloom filter, and subsequently
 interpolates missing values. It then annotates additional meta-data into
