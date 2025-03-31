@@ -1,0 +1,138 @@
+{
+  "workflowName": "riot-pred",
+  "operatorConnections": [
+    {
+      "fromOperator": "source",
+      "toOperator": "blobRead",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 500,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "source",
+      "toOperator": "senMLParse",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 500,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "blobRead",
+      "toOperator": "decisionTree",
+      "tupleCpuLength": 1500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "blobRead",
+      "toOperator": "multiVarLinearReg",
+      "tupleCpuLength": 1500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "senMLParse",
+      "toOperator": "decisionTree",
+      "tupleCpuLength": 1500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "senMLParse",
+      "toOperator": "multiVarLinearReg",
+      "tupleCpuLength": 1500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "senMLParse",
+      "toOperator": "average",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 3000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "decisionTree",
+      "toOperator": "mqttPublish",
+      "tupleCpuLength": 500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "multiVarLinearReg",
+      "toOperator": "errorEstimate",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "average",
+      "toOperator": "errorEstimate",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "errorEstimate",
+      "toOperator": "mqttPublish",
+      "tupleCpuLength": 500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "mqttPublish",
+      "toOperator": "sink",
+      "tupleCpuLength": 500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    }
+  ],
+
+  "operators": [
+    {
+      "name": "source",
+      "classKey": "streaming:kafka_source",
+      "cloudOnly": false
+    },
+    {
+      "name": "senMLParse",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "blobRead",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "decisionTree",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "multiVarLinearReg",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "average",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "errorEstimate",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "mqttPublish",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "sink",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    }
+  ]
+}
+

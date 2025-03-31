@@ -1,0 +1,105 @@
+{
+  "workflowName": "riot-train",
+  "operatorConnections": [
+    {
+      "fromOperator": "source",
+      "toOperator": "tableRead",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 500,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "tableRead",
+      "toOperator": "multiVarLinearRegTrain",
+      "tupleCpuLength": 4000,
+      "tupleNwLength": 20000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "tableRead",
+      "toOperator": "annotation",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 20000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "annotation",
+      "toOperator": "decisionTreeTrain",
+      "tupleCpuLength": 4500,
+      "tupleNwLength": 20500,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "multiVarLinearRegTrain",
+      "toOperator": "blobWrite",
+      "tupleCpuLength": 3000,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "decisionTreeTrain",
+      "toOperator": "blobWrite",
+      "tupleCpuLength": 3000,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "blobWrite",
+      "toOperator": "mqttPublish",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "mqttPublish",
+      "toOperator": "sink",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    }
+  ],
+
+  "operators": [
+    {
+      "name": "source",
+      "classKey": "streaming:kafka_source",
+      "cloudOnly": false
+    },
+    {
+      "name": "tableRead",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "multiVarLinearRegTrain",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "annotation",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "decisionTreeTrain",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "blobWrite",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "mqttPublish",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "sink",
+      "classKey": "streaming:kafka_sink",
+      "cloudOnly": false
+    }
+  ]
+}
+

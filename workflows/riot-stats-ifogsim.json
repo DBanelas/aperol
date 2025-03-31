@@ -1,0 +1,148 @@
+{
+  "workflowName": "riot-stats",
+  "operatorConnections": [
+    {
+      "fromOperator": "source",
+      "toOperator": "senMLParse",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 500,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "senMLParse",
+      "toOperator": "average",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "senMLParse",
+      "toOperator": "kalmanFilter",
+      "tupleCpuLength": 4000,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "senMLParse",
+      "toOperator": "distinctCount",
+      "tupleCpuLength": 2500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "kalmanFilter",
+      "toOperator": "slidingLinearReg",
+      "tupleCpuLength": 3500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "average",
+      "toOperator": "acc",
+      "tupleCpuLength": 500,
+      "tupleNwLength": 2000,
+      "selectivity": 0.1
+    },
+    {
+      "fromOperator": "slidingLinearReg",
+      "toOperator": "acc",
+      "tupleCpuLength": 500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "distinctCount",
+      "toOperator": "acc",
+      "tupleCpuLength": 500,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "acc",
+      "toOperator": "plt",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "plt",
+      "toOperator": "zip",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "zip",
+      "toOperator": "blobUpload",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 2000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "blobUpload",
+      "toOperator": "sink",
+      "tupleCpuLength": 2500,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    }
+  ],
+
+  "operators": [
+    {
+      "name": "source",
+      "classKey": "streaming:kafka_source",
+      "cloudOnly": false
+    },
+    {
+      "name": "senMLParse",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "average",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "kalmanFilter",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "distinctCount",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "slidingLinearReg",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "acc",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "plt",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "zip",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "blobUpload",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "sink",
+      "classKey": "streaming:kafka_sink",
+      "cloudOnly": false
+    }
+  ]
+}
+

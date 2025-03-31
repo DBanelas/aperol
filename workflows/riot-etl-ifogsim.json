@@ -1,0 +1,141 @@
+{
+  "workflowName": "riot-train",
+  "operatorConnections": [
+    {
+      "fromOperator": "source",
+      "toOperator": "senMLParse",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 500,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "senMLParse",
+      "toOperator": "rangeFilter",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "rangeFilter",
+      "toOperator": "bloomFilter",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 5000,
+      "selectivity": 0.7
+    },
+    {
+      "fromOperator": "bloomFilter",
+      "toOperator": "interpolation",
+      "tupleCpuLength": 3000,
+      "tupleNwLength": 5000,
+      "selectivity": 0.5
+    },
+    {
+      "fromOperator": "interpolation",
+      "toOperator": "join",
+      "tupleCpuLength": 4500,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "join",
+      "toOperator": "annotate",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "annotate",
+      "toOperator": "csvToSenML",
+      "tupleCpuLength": 2500,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "annotate",
+      "toOperator": "azureTableInsert",
+      "tupleCpuLength": 2500,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "csvToSenML",
+      "toOperator": "mqttPublish",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "azureTableInsert",
+      "toOperator": "sink",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "mqttPublish",
+      "toOperator": "sink",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    }
+  ],
+
+  "operators": [
+    {
+      "name": "source",
+      "classKey": "streaming:kafka_source",
+      "cloudOnly": false
+    },
+    {
+      "name": "senMLParse",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "rangeFilter",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "bloomFilter",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "interpolation",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "join",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "annotate",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "csvToSenML",
+      "classKey": "streaming:kafka_sink",
+      "cloudOnly": true
+    },
+    {
+      "name": "azureTableInsert",
+      "classKey": "streaming:kafka_sink",
+      "cloudOnly": true
+    },
+    {
+      "name": "mqttPublish",
+      "classKey": "streaming:kafka_sink",
+      "cloudOnly": false
+    },
+    {
+      "name": "sink",
+      "classKey": "streaming:kafka_sink",
+      "cloudOnly": false
+    }
+  ]
+}
+
