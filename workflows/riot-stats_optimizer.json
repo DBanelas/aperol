@@ -1,0 +1,234 @@
+{
+  "optimizationParameters" : {
+    "continuous" : true,
+    "networkName" : "dummyNetworkName",
+    "dictionaryName" : "dummyDictionaryName",
+    "algorithm" : "auto",
+    "description" : "MyDescription",
+    "timeout_ms" : 60000,
+    "numOfPlans" : 1
+  },
+  "workflowName" : "Streaming",
+  "enclosingOperatorName" : "Streaming Optimization",
+  "innerSourcesPortsAndSchemas" : [ ],
+  "innerSinksPortsAndSchemas" : [ ],
+  "operatorConnections" : [ {
+    "fromOperator" : "source",
+    "toOperator" : "senMLParse",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "senMLParse",
+    "toOperator" : "average",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "senMLParse",
+    "toOperator" : "kalmanFilter",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "senMLParse",
+    "toOperator" : "distinctCount",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "kalmanFilter",
+    "toOperator" : "slidingLinearReg",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "average",
+    "toOperator" : "acc",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "slidingLinearReg",
+    "toOperator" : "acc",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "distinctCount",
+    "toOperator" : "acc",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "acc",
+    "toOperator" : "plt",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "plt",
+    "toOperator" : "zip",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "zip",
+    "toOperator" : "blobUpload",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "blobUpload",
+    "toOperator" : "sink",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  } ],
+  "operators" : [ {
+    "name" : "source",
+    "classKey" : "source",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "senMLParse",
+    "classKey" : "senMLParse",
+    "cloudOnly" : true,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "average",
+    "classKey" : "average",
+    "cloudOnly" : true,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "kalmanFilter",
+    "classKey" : "kalmanFilter",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "distinctCount",
+    "classKey" : "distinctCount",
+    "cloudOnly" : true,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "slidingLinearReg",
+    "classKey" : "slidingLinearReg",
+    "cloudOnly" : true,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "acc",
+    "classKey" : "acc",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "plt",
+    "classKey" : "plt",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "zip",
+    "classKey" : "zip",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "blobUpload",
+    "classKey" : "blobUpload",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "sink",
+    "classKey" : "sink",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  } ],
+  "placementSites" : [ ]
+}

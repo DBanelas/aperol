@@ -1,0 +1,14 @@
+cloud:site-0=0.2
+cloud:site-1=0.2
+site-0-0:site-0-0-0=0.5
+site-0-0:site-0-0-1=0.4
+site-0-1:site-0-1-0=0.9
+site-0-1:site-0-1-1=0.8
+site-0:site-0-0=0.0
+site-0:site-0-1=0.5
+site-1-0:site-1-0-0=0.2
+site-1-0:site-1-0-1=0.4
+site-1-1:site-1-1-0=0.8
+site-1-1:site-1-1-1=0.5
+site-1:site-1-0=0.5
+site-1:site-1-1=0.6

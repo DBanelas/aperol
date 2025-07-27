@@ -1,0 +1,144 @@
+{
+  "optimizationParameters" : {
+    "continuous" : true,
+    "networkName" : "dummyNetworkName",
+    "dictionaryName" : "dummyDictionaryName",
+    "algorithm" : "auto",
+    "description" : "MyDescription",
+    "timeout_ms" : 60000,
+    "numOfPlans" : 1
+  },
+  "workflowName" : "Streaming",
+  "enclosingOperatorName" : "Streaming Optimization",
+  "innerSourcesPortsAndSchemas" : [ ],
+  "innerSinksPortsAndSchemas" : [ ],
+  "operatorConnections" : [ {
+    "fromOperator" : "source",
+    "toOperator" : "filter",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "filter",
+    "toOperator" : "map",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "map",
+    "toOperator" : "join",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "redis-source",
+    "toOperator" : "join",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "join",
+    "toOperator" : "aggregation",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "aggregation",
+    "toOperator" : "sink",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  } ],
+  "operators" : [ {
+    "name" : "source",
+    "classKey" : "source",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "filter",
+    "classKey" : "filter",
+    "cloudOnly" : true,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "map",
+    "classKey" : "map",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "join",
+    "classKey" : "join",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "aggregation",
+    "classKey" : "aggregation",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "sink",
+    "classKey" : "sink",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "redis-source",
+    "classKey" : "redis-source",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  } ],
+  "placementSites" : [ ]
+}

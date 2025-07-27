@@ -1,0 +1,170 @@
+{
+  "optimizationParameters" : {
+    "continuous" : true,
+    "networkName" : "dummyNetworkName",
+    "dictionaryName" : "dummyDictionaryName",
+    "algorithm" : "auto",
+    "description" : "MyDescription",
+    "timeout_ms" : 60000,
+    "numOfPlans" : 1
+  },
+  "workflowName" : "Streaming",
+  "enclosingOperatorName" : "Streaming Optimization",
+  "innerSourcesPortsAndSchemas" : [ ],
+  "innerSinksPortsAndSchemas" : [ ],
+  "operatorConnections" : [ {
+    "fromOperator" : "source",
+    "toOperator" : "tableRead",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "tableRead",
+    "toOperator" : "multiVarLinearRegTrain",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "tableRead",
+    "toOperator" : "annotation",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "annotation",
+    "toOperator" : "decisionTreeTrain",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "multiVarLinearRegTrain",
+    "toOperator" : "blobWrite",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "decisionTreeTrain",
+    "toOperator" : "blobWrite",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "blobWrite",
+    "toOperator" : "mqttPublish",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  }, {
+    "fromOperator" : "mqttPublish",
+    "toOperator" : "sink",
+    "fromPort" : "output",
+    "toPort" : "input",
+    "fromPortType" : "OUTPUT_PORT",
+    "toPortType" : "INPUT_PORT"
+  } ],
+  "operators" : [ {
+    "name" : "source",
+    "classKey" : "source",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "tableRead",
+    "classKey" : "tableRead",
+    "cloudOnly" : true,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "multiVarLinearRegTrain",
+    "classKey" : "multiVarLinearRegTrain",
+    "cloudOnly" : true,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "annotation",
+    "classKey" : "annotation",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "decisionTreeTrain",
+    "classKey" : "decisionTreeTrain",
+    "cloudOnly" : true,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "blobWrite",
+    "classKey" : "blobWrite",
+    "cloudOnly" : true,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "mqttPublish",
+    "classKey" : "mqttPublish",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  }, {
+    "name" : "sink",
+    "classKey" : "sink",
+    "cloudOnly" : false,
+    "operatorClass" : "com.rapidminer.operator.dummyOperator",
+    "inputPortsAndSchemas" : [ ],
+    "outputPortsAndSchemas" : [ ],
+    "parameters" : [ ],
+    "hasSubprocesses" : false,
+    "numberOfSubprocesses" : null,
+    "innerWorkflows" : null,
+    "platformName" : null
+  } ],
+  "placementSites" : [ ]
+}

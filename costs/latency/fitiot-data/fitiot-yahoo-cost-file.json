@@ -1,0 +1,85 @@
+{
+    "source": {
+        "a8": {
+            "python": { "latency": 33.11, "latency_std": 0.26,  "throughput": 30280,  "throughput_std": 1354 },
+            "java":   { "latency":  3.25, "latency_std": 0.03,  "throughput": 326687, "throughput_std": 14701 }
+        },
+        "rpi3": {
+            "python": { "latency": 14.30, "latency_std": 0.11,  "throughput": 70221,  "throughput_std": 3160 },
+            "java":   { "latency":  0.95, "latency_std": 0.02,  "throughput": 1172155,"throughput_std": 52747 },
+            "flink":  { "latency":  2.57, "latency_std": 0.02,  "throughput": 388014, "throughput_std": 17461 }
+        }
+    },
+
+    "filter": {
+        "a8": {
+            "python": { "latency": 42.49, "latency_std": 0.34,  "throughput": 23626,  "throughput_std": 1063 },
+            "java":   { "latency":  3.26, "latency_std": 0.03,  "throughput": 325752, "throughput_std": 14659 }
+        },
+        "rpi3": {
+            "python": { "latency": 17.40, "latency_std": 0.14,  "throughput": 57892,  "throughput_std": 2605 },
+            "java":   { "latency":  0.98, "latency_std": 0.02,  "throughput": 1146028,"throughput_std": 51571 },
+            "flink":  { "latency":  3.16, "latency_std": 0.03,  "throughput": 315619, "throughput_std": 14203 }
+        }
+    },
+
+    "map": {
+        "a8": {
+            "python": { "latency": 44.20, "latency_std": 0.35,  "throughput": 22722,  "throughput_std": 1022 },
+            "java":   { "latency":  3.35, "latency_std": 0.03,  "throughput": 325728, "throughput_std": 14658 }
+        },
+        "rpi3": {
+            "python": { "latency": 19.80, "latency_std": 0.16,  "throughput": 57892,  "throughput_std": 2605 },
+            "java":   { "latency":  0.96, "latency_std": 0.02,  "throughput": 1146028,"throughput_std": 51571 },
+            "flink":  { "latency":  3.26, "latency_std": 0.03,  "throughput": 315619, "throughput_std": 14203 }
+        }
+    },
+
+    "join": {
+        "a8": {
+            "python": { "latency": 93.07, "latency_std": 0.74,  "throughput": 11252,  "throughput_std": 506 },
+            "java":   { "latency":  8.50, "latency_std": 0.07,  "throughput": 107823, "throughput_std": 4852 }
+        },
+        "rpi3": {
+            "python": { "latency": 89.50, "latency_std": 0.72,  "throughput": 11264,  "throughput_std": 507 },
+            "java":   { "latency":  1.50, "latency_std": 0.02,  "throughput": 669270, "throughput_std": 30117 },
+            "flink":  { "latency": 10.30, "latency_std": 0.08,  "throughput": 97064,  "throughput_std": 4368 }
+        }
+    },
+
+    "aggregation": {
+        "a8": {
+            "python": { "latency": 71.03, "latency_std": 0.57,  "throughput": 14446,  "throughput_std": 650 },
+            "java":   { "latency":  3.89, "latency_std": 0.03,  "throughput": 215549, "throughput_std": 9690 }
+        },
+        "rpi3": {
+            "python": { "latency": 22.46, "latency_std": 0.18,  "throughput": 44586,  "throughput_std": 2006 },
+            "java":   { "latency":  0.93, "latency_std": 0.02,  "throughput": 1063007,"throughput_std": 47835 },
+            "flink":  { "latency":  2.05, "latency_std": 0.02,  "throughput": 193263, "throughput_std": 8707 }
+        }
+    },
+
+    "redis-source": {
+        "a8": {
+            "python": { "latency": 33.11, "latency_std": 0.26,  "throughput": 30280,  "throughput_std": 1354 },
+            "java":   { "latency":  3.25, "latency_std": 0.03,  "throughput": 326687, "throughput_std": 14701 }
+        },
+        "rpi3": {
+            "python": { "latency": 14.30, "latency_std": 0.11,  "throughput": 70221,  "throughput_std": 3160 },
+            "java":   { "latency":  0.95, "latency_std": 0.02,  "throughput": 1172155,"throughput_std": 52747 },
+            "flink":  { "latency":  2.57, "latency_std": 0.02,  "throughput": 388014, "throughput_std": 17461 }
+        }
+    },
+
+    "sink": {
+        "a8": {
+            "python": { "latency": 33.11, "latency_std": 0.26,  "throughput": 30280,  "throughput_std": 1354 },
+            "java":   { "latency":  3.25, "latency_std": 0.03,  "throughput": 326687, "throughput_std": 14701 }
+        },
+        "rpi3": {
+            "python": { "latency": 14.30, "latency_std": 0.11,  "throughput": 70221,  "throughput_std": 3160 },
+            "java":   { "latency":  0.95, "latency_std": 0.02,  "throughput": 1172155,"throughput_std": 52747 },
+            "flink":  { "latency":  2.57, "latency_std": 0.02,  "throughput": 388014, "throughput_std": 17461 }
+        }
+    }
+}

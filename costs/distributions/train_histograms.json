@@ -1,0 +1,614 @@
+{
+    "7": [
+        {
+            "bin_start": 0.0,
+            "bin_end": 63.0,
+            "probability": 0.13687600644122383
+        },
+        {
+            "bin_start": 63.0,
+            "bin_end": 126.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 126.0,
+            "bin_end": 189.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 189.0,
+            "bin_end": 252.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 252.0,
+            "bin_end": 315.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 315.0,
+            "bin_end": 378.0,
+            "probability": 0.13768115942028986
+        },
+        {
+            "bin_start": 378.0,
+            "bin_end": 441.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 441.0,
+            "bin_end": 504.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 504.0,
+            "bin_end": 567.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 567.0,
+            "bin_end": 630.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 630.0,
+            "bin_end": 693.0,
+            "probability": 0.302536231884058
+        },
+        {
+            "bin_start": 693.0,
+            "bin_end": 756.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 756.0,
+            "bin_end": 819.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 819.0,
+            "bin_end": 882.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 882.0,
+            "bin_end": 945.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 945.0,
+            "bin_end": 1008.0,
+            "probability": 0.14150563607085345
+        },
+        {
+            "bin_start": 1008.0,
+            "bin_end": 1071.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 1071.0,
+            "bin_end": 1134.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 1134.0,
+            "bin_end": 1197.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 1197.0,
+            "bin_end": 1260.0,
+            "probability": 0.28140096618357485
+        }
+    ],
+    "15": [
+        {
+            "bin_start": 0.0,
+            "bin_end": 315.0,
+            "probability": 0.0038022813688212928
+        },
+        {
+            "bin_start": 315.0,
+            "bin_end": 630.0,
+            "probability": 0.018411046627976786
+        },
+        {
+            "bin_start": 630.0,
+            "bin_end": 945.0,
+            "probability": 0.02841705023013808
+        },
+        {
+            "bin_start": 945.0,
+            "bin_end": 1260.0,
+            "probability": 0.022813688212927757
+        },
+        {
+            "bin_start": 1260.0,
+            "bin_end": 1575.0,
+            "probability": 0.02301380828497098
+        },
+        {
+            "bin_start": 1575.0,
+            "bin_end": 1890.0,
+            "probability": 0.02601560936561937
+        },
+        {
+            "bin_start": 1890.0,
+            "bin_end": 2205.0,
+            "probability": 0.0324194516710026
+        },
+        {
+            "bin_start": 2205.0,
+            "bin_end": 2520.0,
+            "probability": 0.05283169901941165
+        },
+        {
+            "bin_start": 2520.0,
+            "bin_end": 2835.0,
+            "probability": 0.056233740244146485
+        },
+        {
+            "bin_start": 2835.0,
+            "bin_end": 3150.0,
+            "probability": 0.03662197318391035
+        },
+        {
+            "bin_start": 3150.0,
+            "bin_end": 3465.0,
+            "probability": 0.057834700820492295
+        },
+        {
+            "bin_start": 3465.0,
+            "bin_end": 3780.0,
+            "probability": 0.05423253952371423
+        },
+        {
+            "bin_start": 3780.0,
+            "bin_end": 4095.0,
+            "probability": 0.057034220532319393
+        },
+        {
+            "bin_start": 4095.0,
+            "bin_end": 4410.0,
+            "probability": 0.09165499299579748
+        },
+        {
+            "bin_start": 4410.0,
+            "bin_end": 4725.0,
+            "probability": 0.05743446067640584
+        },
+        {
+            "bin_start": 4725.0,
+            "bin_end": 5040.0,
+            "probability": 0.05263157894736842
+        },
+        {
+            "bin_start": 5040.0,
+            "bin_end": 5355.0,
+            "probability": 0.05843506103662197
+        },
+        {
+            "bin_start": 5355.0,
+            "bin_end": 5670.0,
+            "probability": 0.056433860316189716
+        },
+        {
+            "bin_start": 5670.0,
+            "bin_end": 5985.0,
+            "probability": 0.10786471883129878
+        },
+        {
+            "bin_start": 5985.0,
+            "bin_end": 6300.0,
+            "probability": 0.10586351811086651
+        }
+    ],
+    "31": [
+        {
+            "bin_start": 170.0,
+            "bin_end": 719.45,
+            "probability": 0.004
+        },
+        {
+            "bin_start": 719.45,
+            "bin_end": 1268.9,
+            "probability": 0.006
+        },
+        {
+            "bin_start": 1268.9,
+            "bin_end": 1818.3500000000001,
+            "probability": 0.0128
+        },
+        {
+            "bin_start": 1818.3500000000001,
+            "bin_end": 2367.8,
+            "probability": 0.0184
+        },
+        {
+            "bin_start": 2367.8,
+            "bin_end": 2917.25,
+            "probability": 0.0182
+        },
+        {
+            "bin_start": 2917.25,
+            "bin_end": 3466.7000000000003,
+            "probability": 0.0258
+        },
+        {
+            "bin_start": 3466.7000000000003,
+            "bin_end": 4016.1500000000005,
+            "probability": 0.0276
+        },
+        {
+            "bin_start": 4016.1500000000005,
+            "bin_end": 4565.6,
+            "probability": 0.0374
+        },
+        {
+            "bin_start": 4565.6,
+            "bin_end": 5115.05,
+            "probability": 0.0382
+        },
+        {
+            "bin_start": 5115.05,
+            "bin_end": 5664.5,
+            "probability": 0.0506
+        },
+        {
+            "bin_start": 5664.5,
+            "bin_end": 6213.950000000001,
+            "probability": 0.0464
+        },
+        {
+            "bin_start": 6213.950000000001,
+            "bin_end": 6763.400000000001,
+            "probability": 0.0718
+        },
+        {
+            "bin_start": 6763.400000000001,
+            "bin_end": 7312.85,
+            "probability": 0.0478
+        },
+        {
+            "bin_start": 7312.85,
+            "bin_end": 7862.300000000001,
+            "probability": 0.0802
+        },
+        {
+            "bin_start": 7862.300000000001,
+            "bin_end": 8411.75,
+            "probability": 0.071
+        },
+        {
+            "bin_start": 8411.75,
+            "bin_end": 8961.2,
+            "probability": 0.1024
+        },
+        {
+            "bin_start": 8961.2,
+            "bin_end": 9510.650000000001,
+            "probability": 0.0716
+        },
+        {
+            "bin_start": 9510.650000000001,
+            "bin_end": 10060.1,
+            "probability": 0.0942
+        },
+        {
+            "bin_start": 10060.1,
+            "bin_end": 10609.550000000001,
+            "probability": 0.0776
+        },
+        {
+            "bin_start": 10609.550000000001,
+            "bin_end": 11159.0,
+            "probability": 0.098
+        }
+    ],
+    "127": [
+        {
+            "bin_start": 560.0,
+            "bin_end": 1050.9,
+            "probability": 0.0006
+        },
+        {
+            "bin_start": 1050.9,
+            "bin_end": 1541.8,
+            "probability": 0.002
+        },
+        {
+            "bin_start": 1541.8,
+            "bin_end": 2032.6999999999998,
+            "probability": 0.0078
+        },
+        {
+            "bin_start": 2032.6999999999998,
+            "bin_end": 2523.6,
+            "probability": 0.008
+        },
+        {
+            "bin_start": 2523.6,
+            "bin_end": 3014.5,
+            "probability": 0.0154
+        },
+        {
+            "bin_start": 3014.5,
+            "bin_end": 3505.3999999999996,
+            "probability": 0.0238
+        },
+        {
+            "bin_start": 3505.3999999999996,
+            "bin_end": 3996.2999999999997,
+            "probability": 0.0384
+        },
+        {
+            "bin_start": 3996.2999999999997,
+            "bin_end": 4487.2,
+            "probability": 0.0454
+        },
+        {
+            "bin_start": 4487.2,
+            "bin_end": 4978.099999999999,
+            "probability": 0.0446
+        },
+        {
+            "bin_start": 4978.099999999999,
+            "bin_end": 5469.0,
+            "probability": 0.0302
+        },
+        {
+            "bin_start": 5469.0,
+            "bin_end": 5959.9,
+            "probability": 0.0362
+        },
+        {
+            "bin_start": 5959.9,
+            "bin_end": 6450.799999999999,
+            "probability": 0.0732
+        },
+        {
+            "bin_start": 6450.799999999999,
+            "bin_end": 6941.7,
+            "probability": 0.0472
+        },
+        {
+            "bin_start": 6941.7,
+            "bin_end": 7432.599999999999,
+            "probability": 0.0622
+        },
+        {
+            "bin_start": 7432.599999999999,
+            "bin_end": 7923.5,
+            "probability": 0.0734
+        },
+        {
+            "bin_start": 7923.5,
+            "bin_end": 8414.4,
+            "probability": 0.1186
+        },
+        {
+            "bin_start": 8414.4,
+            "bin_end": 8905.3,
+            "probability": 0.0608
+        },
+        {
+            "bin_start": 8905.3,
+            "bin_end": 9396.199999999999,
+            "probability": 0.0944
+        },
+        {
+            "bin_start": 9396.199999999999,
+            "bin_end": 9887.1,
+            "probability": 0.113
+        },
+        {
+            "bin_start": 9887.1,
+            "bin_end": 10378.0,
+            "probability": 0.1048
+        }
+    ],
+    "1023": [
+        {
+            "bin_start": 365.0,
+            "bin_end": 908.3,
+            "probability": 0.00022148394241417498
+        },
+        {
+            "bin_start": 908.3,
+            "bin_end": 1451.6,
+            "probability": 0.00044296788482834997
+        },
+        {
+            "bin_start": 1451.6,
+            "bin_end": 1994.8999999999999,
+            "probability": 0.0017718715393133999
+        },
+        {
+            "bin_start": 1994.8999999999999,
+            "bin_end": 2538.2,
+            "probability": 0.0017718715393133999
+        },
+        {
+            "bin_start": 2538.2,
+            "bin_end": 3081.5,
+            "probability": 0.0017718715393133999
+        },
+        {
+            "bin_start": 3081.5,
+            "bin_end": 3624.7999999999997,
+            "probability": 0.0053156146179402
+        },
+        {
+            "bin_start": 3624.7999999999997,
+            "bin_end": 4168.099999999999,
+            "probability": 0.0037652270210409744
+        },
+        {
+            "bin_start": 4168.099999999999,
+            "bin_end": 4711.4,
+            "probability": 0.006644518272425249
+        },
+        {
+            "bin_start": 4711.4,
+            "bin_end": 5254.7,
+            "probability": 0.010409745293466223
+        },
+        {
+            "bin_start": 5254.7,
+            "bin_end": 5798.0,
+            "probability": 0.012181616832779624
+        },
+        {
+            "bin_start": 5798.0,
+            "bin_end": 6341.299999999999,
+            "probability": 0.015946843853820596
+        },
+        {
+            "bin_start": 6341.299999999999,
+            "bin_end": 6884.599999999999,
+            "probability": 0.027021040974529346
+        },
+        {
+            "bin_start": 6884.599999999999,
+            "bin_end": 7427.9,
+            "probability": 0.03122923588039867
+        },
+        {
+            "bin_start": 7427.9,
+            "bin_end": 7971.199999999999,
+            "probability": 0.05847176079734219
+        },
+        {
+            "bin_start": 7971.199999999999,
+            "bin_end": 8514.5,
+            "probability": 0.06843853820598006
+        },
+        {
+            "bin_start": 8514.5,
+            "bin_end": 9057.8,
+            "probability": 0.11362126245847176
+        },
+        {
+            "bin_start": 9057.8,
+            "bin_end": 9601.099999999999,
+            "probability": 0.09678848283499446
+        },
+        {
+            "bin_start": 9601.099999999999,
+            "bin_end": 10144.4,
+            "probability": 0.1743078626799557
+        },
+        {
+            "bin_start": 10144.4,
+            "bin_end": 10687.699999999999,
+            "probability": 0.13399778516057587
+        },
+        {
+            "bin_start": 10687.699999999999,
+            "bin_end": 11231.0,
+            "probability": 0.23588039867109634
+        }
+    ],
+    "2047": [
+        {
+            "bin_start": 330.0,
+            "bin_end": 471.0,
+            "probability": 0.00022426553038797938
+        },
+        {
+            "bin_start": 471.0,
+            "bin_end": 612.0,
+            "probability": 0.0
+        },
+        {
+            "bin_start": 612.0,
+            "bin_end": 753.0,
+            "probability": 0.00022426553038797938
+        },
+        {
+            "bin_start": 753.0,
+            "bin_end": 894.0,
+            "probability": 0.001121327651939897
+        },
+        {
+            "bin_start": 894.0,
+            "bin_end": 1035.0,
+            "probability": 0.001794124243103835
+        },
+        {
+            "bin_start": 1035.0,
+            "bin_end": 1176.0,
+            "probability": 0.0031397174254317113
+        },
+        {
+            "bin_start": 1176.0,
+            "bin_end": 1317.0,
+            "probability": 0.004261045077371608
+        },
+        {
+            "bin_start": 1317.0,
+            "bin_end": 1458.0,
+            "probability": 0.006055169320475443
+        },
+        {
+            "bin_start": 1458.0,
+            "bin_end": 1599.0,
+            "probability": 0.007400762502803319
+        },
+        {
+            "bin_start": 1599.0,
+            "bin_end": 1740.0,
+            "probability": 0.011886073110562907
+        },
+        {
+            "bin_start": 1740.0,
+            "bin_end": 1881.0,
+            "probability": 0.02489347387306571
+        },
+        {
+            "bin_start": 1881.0,
+            "bin_end": 2022.0,
+            "probability": 0.02870598788966136
+        },
+        {
+            "bin_start": 2022.0,
+            "bin_end": 2163.0,
+            "probability": 0.047544292442251626
+        },
+        {
+            "bin_start": 2163.0,
+            "bin_end": 2304.0,
+            "probability": 0.04911415115496748
+        },
+        {
+            "bin_start": 2304.0,
+            "bin_end": 2445.0,
+            "probability": 0.08634222919937205
+        },
+        {
+            "bin_start": 2445.0,
+            "bin_end": 2586.0,
+            "probability": 0.10226508185691859
+        },
+        {
+            "bin_start": 2586.0,
+            "bin_end": 2727.0,
+            "probability": 0.13455931823278763
+        },
+        {
+            "bin_start": 2727.0,
+            "bin_end": 2868.0,
+            "probability": 0.16909620991253643
+        },
+        {
+            "bin_start": 2868.0,
+            "bin_end": 3009.0,
+            "probability": 0.15339762278537789
+        },
+        {
+            "bin_start": 3009.0,
+            "bin_end": 3150.0,
+            "probability": 0.16797488226059654
+        }
+    ]
+}

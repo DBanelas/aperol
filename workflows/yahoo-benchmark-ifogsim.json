@@ -1,0 +1,85 @@
+{
+  "workflowName": "yahoo-benchmark",
+  "operatorConnections": [
+    {
+      "fromOperator": "source",
+      "toOperator": "filter",
+      "tupleCpuLength": 1000,
+      "tupleNwLength": 500,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "filter",
+      "toOperator": "map",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    },
+    {
+      "fromOperator": "map",
+      "toOperator": "join",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 5000,
+      "selectivity": 0.7
+    },
+    {
+      "fromOperator": "redis-source",
+      "toOperator": "join",
+      "tupleCpuLength": 2000,
+      "tupleNwLength": 5000,
+      "selectivity": 0.7
+    },
+    {
+      "fromOperator": "join",
+      "toOperator": "aggregation",
+      "tupleCpuLength": 3000,
+      "tupleNwLength": 5000,
+      "selectivity": 0.5
+    },
+    {
+      "fromOperator": "aggregation",
+      "toOperator": "sink",
+      "tupleCpuLength": 4500,
+      "tupleNwLength": 5000,
+      "selectivity": 1.0
+    }
+  ],
+
+  "operators": [
+    {
+      "name": "source",
+      "classKey": "streaming:kafka_source",
+      "cloudOnly": false
+    },
+    {
+      "name": "filter",
+      "classKey": "streaming:map",
+      "cloudOnly": true
+    },
+    {
+      "name": "map",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "join",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "aggregation",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "sink",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    },
+    {
+      "name": "redis-source",
+      "classKey": "streaming:map",
+      "cloudOnly": false
+    }
+  ]
+}
