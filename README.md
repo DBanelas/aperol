@@ -79,14 +79,15 @@ also compares the predicted values against a moving average and estimates
 the residual error between them. The predicted classes, values and errors 
 are published to the MQTT broker.
 
+
 - ``` Yahoo Benchmark (YAHOO)```: implements the Yahoo! Streaming Benchmark workload. A synthetic ad‑event generator
-- publishes JSON messages (impression/click) with fields like event time, adId, campaignId, userId, and pageId to the broker.
-- The streaming dataflow enriches events via an adId→campaignId lookup, then computes per‑campaign aggregates
-- in sliding windows (e.g., 1s/10s/1m): impressions, clicks, unique users, and CTR (clicks/impressions).
-- It also maintains top‑K campaigns by throughput and emits end‑to‑end latency metrics (now − event timestamp) for SLO
-- tracking. Aggregates and latency snapshots are written to a fast key‑value store for a dashboard and are additionally
-- published to the MQTT broker. The generator allows tuning event rate and key cardinality, while the dataflow handles
-- out‑of‑order events with watermarks and late‑data side outputs.
+publishes JSON messages (impression/click) with fields like event time, adId, campaignId, userId, and pageId to the broker.
+The streaming dataflow enriches events via an adId→campaignId lookup, then computes per‑campaign aggregates
+in sliding windows (e.g., 1s/10s/1m): impressions, clicks, unique users, and CTR (clicks/impressions).
+It also maintains top‑K campaigns by throughput and emits end‑to‑end latency metrics (now − event timestamp) for SLO
+tracking. Aggregates and latency snapshots are written to a fast key‑value store for a dashboard and are additionally
+published to the MQTT broker. The generator allows tuning event rate and key cardinality, while the dataflow handles
+out‑of‑order events with watermarks and late‑data side outputs.
 
 ## Experimental scenarios
 
