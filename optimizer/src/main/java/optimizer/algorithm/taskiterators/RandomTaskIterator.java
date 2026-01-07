@@ -3,6 +3,8 @@ package optimizer.algorithm.taskiterators;
 import core.structs.Tuple;
 import optimizer.algorithm.cost.PlanCostEstimatorInterface;
 import optimizer.algorithm.graph.Graph;
+import optimizer.algorithm.newalgs.AlgorithmUtils;
+import optimizer.algorithm.tasks.SinglePlanSignatureTask;
 import optimizer.algorithm.tasks.SinglePlanTask;
 
 import java.math.BigInteger;
@@ -57,16 +59,16 @@ public class RandomTaskIterator extends AbstractTaskIterator {
     public Callable<Tuple<Graph, Integer>> next() {
         BigInteger planNo = generateNextPlanNo();
         currentPlan.set(currentPlan.get().add(BigInteger.ONE));
-//        ArrayList<Integer> actionsToApply = AlgorithmUtils.convertToBaseWithPadding(planNo, targetBase, rootFlow.getVertices().size());
-//
-//        for (int i = 0; i < actionsToApply.size(); i++) {
-//            if (cloudOnlyOperatorIds.contains(rootFlow.getVertices().get(i).getOperatorId())) {
-//                actionsToApply.set(i, siteMappingReverse.get("cloud"));
-//            }
-//        }
-//
-//        Graph flow = AlgorithmUtils.applyActionsToGraph(rootFlow, actionsToApply, actions);
-//        return new SinglePlanSignatureTask(flow, flow.getSignatureDashed(), costEstimation);
-        return new SinglePlanTask(rootFlow, costEstimation, actions, planNo, targetBase);
+        ArrayList<Integer> actionsToApply = AlgorithmUtils.convertToBaseWithPadding(planNo, targetBase, rootFlow.getVertices().size());
+
+        for (int i = 0; i < actionsToApply.size(); i++) {
+            if (cloudOnlyOperatorIds.contains(rootFlow.getVertices().get(i).getOperatorId())) {
+                actionsToApply.set(i, siteMappingReverse.get("cloud"));
+            }
+        }
+
+        Graph flow = AlgorithmUtils.applyActionsToGraph(rootFlow, actionsToApply, actions);
+        return new SinglePlanSignatureTask(flow, flow.getSignatureDashed(), costEstimation);
+//        return new SinglePlanTask(rootFlow, costEstimation, actions, planNo, targetBase);
     }
 }

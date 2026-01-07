@@ -13,7 +13,7 @@ import optimizer.algorithm.taskiterators.TaskIterator;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
-public class NewBatchESCp extends AbstractPlanBasedAlgorithm {
+public class BatchESCp extends AbstractPlanBasedAlgorithm {
 
     private final int batchSize;
     private final BigInteger numBatches;
@@ -28,15 +28,15 @@ public class NewBatchESCp extends AbstractPlanBasedAlgorithm {
         System.out.println();
     }
 
-    public NewBatchESCp(Graph rootFlow,
-                        ArrayList<Tuple<Integer, Integer>> actions,
-                        BigInteger possiblePlans,
-                        int targetBase,
-                        PlanCostEstimatorInterface costEstimation,
-                        int timeout,
-                        boolean disableStats,
-                        int numThreads,
-                        int batchSize) {
+    public BatchESCp(Graph rootFlow,
+                     ArrayList<Tuple<Integer, Integer>> actions,
+                     BigInteger possiblePlans,
+                     int targetBase,
+                     PlanCostEstimatorInterface costEstimation,
+                     int timeout,
+                     boolean disableStats,
+                     int numThreads,
+                     int batchSize) {
         super(rootFlow, possiblePlans, timeout, disableStats, numThreads, 10 * numThreads);
 
         // possiblePlans remains as a BigInteger

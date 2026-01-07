@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * A scheduled thread outputs statistics every second.
  * The algorithm shuts down its executor when computation finishes or when the specified timeout is reached.
  */
-public class NewESQ {
+public class ESQ {
     // Instance state (all state is now per-algorithm instance)
     private final BlockingQueue<Graph> planSpaceQueue = new LinkedBlockingQueue<>();
     private final ConcurrentMap<String, Boolean> visitedSignatures = new ConcurrentHashMap<>();

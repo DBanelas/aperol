@@ -17,24 +17,24 @@ import java.util.Map;
 
 import java.util.ArrayList;
 
-public class NewQuickPick extends AbstractPlanBasedAlgorithm {
+public class RSS extends AbstractPlanBasedAlgorithm {
 
     private final double percentage;
     private final BigInteger sampleSize;
 
-    public NewQuickPick(Graph rootFlow,
-                        ArrayList<Tuple<Integer, Integer>> actions,
-                        BigInteger possiblePlans,
-                        int targetBase,
-                        Set<Integer> cloudOnlyOperatorIds,
-                        Map<String, Integer> siteMappingReverse,
-                        Map<String, Integer> platformMappingReverse,
-                        PlanCostEstimatorInterface costEstimation,
-                        int timeout,
-                        boolean disableStats,
-                        int numThreads,
-                        double percentage,
-                        int numHops) {
+    public RSS(Graph rootFlow,
+               ArrayList<Tuple<Integer, Integer>> actions,
+               BigInteger possiblePlans,
+               int targetBase,
+               Set<Integer> cloudOnlyOperatorIds,
+               Map<String, Integer> siteMappingReverse,
+               Map<String, Integer> platformMappingReverse,
+               PlanCostEstimatorInterface costEstimation,
+               int timeout,
+               boolean disableStats,
+               int numThreads,
+               double percentage,
+               int numHops) {
         super(rootFlow, possiblePlans, timeout, disableStats, numThreads, 1000 * numThreads);
         this.percentage = percentage;
 

@@ -117,7 +117,7 @@ public class LightweightFlowOptimizer implements GraphTraversalAlgorithm {
                 startTime = (int) System.currentTimeMillis();
                 this.bestPlan = flow;
                 for (int i = 0; i < this.numIterations; i++) {
-                    NewESQ esq2 = new NewESQ();
+                    ESQ esq2 = new ESQ();
                     this.bestPlan = esq2.createPlanSpaceWithQueue(new Graph(this.bestPlan), actions, possiblePlans, costEstimation, threads, timeout);
                 }
                 endTime = (int) System.currentTimeMillis();
@@ -145,13 +145,13 @@ public class LightweightFlowOptimizer implements GraphTraversalAlgorithm {
                 break;
             case "e-hsp":
                 startTime = (int) System.currentTimeMillis();
-                NewHSp newHSp;
+                HS HS;
                 bestPlan = flow;
                 for (int i = 0; i < numIterations; i++) {
-                    newHSp = new NewHSp(new Graph(this.bestPlan), actions, cloudOnlyOperatorIds, costEstimation, timeout, threads);
-                    newHSp.setup();
-                    this.bestPlan = newHSp.execute();
-                    newHSp.cleanUp();
+                    HS = new HS(new Graph(this.bestPlan), actions, cloudOnlyOperatorIds, costEstimation, timeout, threads);
+                    HS.setup();
+                    this.bestPlan = HS.execute();
+                    HS.cleanUp();
                 }
                 endTime = (int) System.currentTimeMillis();
                 duration = (endTime - startTime);
@@ -165,8 +165,8 @@ public class LightweightFlowOptimizer implements GraphTraversalAlgorithm {
                 startTime = (int) System.currentTimeMillis();
                 this.bestPlan = flow;
                 for (int i = 0; i < numIterations; i++) {
-                    NewQuickPick newQuickPick = new NewQuickPick(new Graph(this.bestPlan), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, false, threads, percentage, 4);
-                    this.bestPlan = newQuickPick.execute();
+                    RSS RSS = new RSS(new Graph(this.bestPlan), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, false, threads, percentage, 4);
+                    this.bestPlan = RSS.execute();
                 }
                 endTime = (int) System.currentTimeMillis();
                 duration = (endTime - startTime);
@@ -178,8 +178,8 @@ public class LightweightFlowOptimizer implements GraphTraversalAlgorithm {
                 break;
             case "e-escp":
                 startTime = (int) System.currentTimeMillis();
-                NewESCp newESCp = new NewESCp(new Graph(flow), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, false, threads);
-                this.bestPlan = newESCp.execute();
+                ESCp ESCp = new ESCp(new Graph(flow), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, false, threads);
+                this.bestPlan = ESCp.execute();
                 endTime = (int) System.currentTimeMillis();
                 duration = (endTime - startTime);
                 this.algorithmDuration = duration;
@@ -191,8 +191,8 @@ public class LightweightFlowOptimizer implements GraphTraversalAlgorithm {
                 for (int i = 0; i < this.numIterations; i++) {
                     Graph greedyBest = NewGSP.createPlanSpaceGSProgressive(new Graph(bestPlan), actions, cloudOnlyOperatorIds, costEstimation, executor, timeout);
                     NewGSP.cleanUp();
-                    NewQuickPick newQuickPick = new NewQuickPick(new Graph(greedyBest), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, false, threads, 3000, 4);
-                    bestPlan = newQuickPick.execute();
+                    RSS RSS = new RSS(new Graph(greedyBest), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, false, threads, 3000, 4);
+                    bestPlan = RSS.execute();
                 }
                 endTime = (int) System.currentTimeMillis();
                 duration = (endTime - startTime);

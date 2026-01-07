@@ -163,10 +163,11 @@ public class FlowOptimizer implements GraphTraversalAlgorithm {
 
         switch (this.algoName) {
             case "e-esq":
+                GSP gsp = new GSP();
                 startTime = (int) System.currentTimeMillis();
                 bestPlan = flow;
                 for (int i = 0; i < this.numIterations; i++) {
-                    NewESQ esq2 = new NewESQ();
+                    ESQ esq2 = new ESQ();
                     bestPlan = esq2.createPlanSpaceWithQueue(new Graph(bestPlan), actions, possiblePlans, costEstimation, threads, timeout);
                 }
                 endTime = (int) System.currentTimeMillis();
@@ -180,8 +181,8 @@ public class FlowOptimizer implements GraphTraversalAlgorithm {
                 startTime = (int) System.currentTimeMillis();
                 bestPlan = flow;
                 for (int i = 0; i < this.numIterations; i++) {
-                    bestPlan = NewGSP.createPlanSpaceGSProgressive(new Graph(bestPlan), actions, cloudOnlyOperatorIds, costEstimation, executor, timeout);
-                    NewGSP.cleanUp();
+                    bestPlan = GSP.createPlanSpaceGSProgressive(new Graph(bestPlan), actions, cloudOnlyOperatorIds, costEstimation, executor, timeout);
+                    GSP.cleanUp();
                 }
                 endTime = (int) System.currentTimeMillis();
                 duration = (endTime - startTime);
@@ -192,17 +193,17 @@ public class FlowOptimizer implements GraphTraversalAlgorithm {
                 break;
             case "e-hsp":
                 startTime = (int) System.currentTimeMillis();
-                NewHSp newHSp;
+                HS HS;
                 bestPlan = flow;
                 for (int i = 0; i < numIterations; i++) {
                     if (this.costEstimationMethod.equals("model")) {
-                        newHSp = new NewHSp(new Graph(bestPlan), actions, cloudOnlyOperatorIds, costEstimation, timeout, threads, modelDirectory, modelNetwork, modelWorkflow);
+                        HS = new HS(new Graph(bestPlan), actions, cloudOnlyOperatorIds, costEstimation, timeout, threads, modelDirectory, modelNetwork, modelWorkflow);
                     } else {
-                        newHSp = new NewHSp(new Graph(bestPlan), actions, cloudOnlyOperatorIds, costEstimation, timeout, threads);
+                        HS = new HS(new Graph(bestPlan), actions, cloudOnlyOperatorIds, costEstimation, timeout, threads);
                     }
-                    newHSp.setup();
-                    bestPlan = newHSp.execute();
-                    newHSp.cleanUp();
+                    HS.setup();
+                    bestPlan = HS.execute();
+                    HS.cleanUp();
                 }
                 endTime = (int) System.currentTimeMillis();
                 duration = (endTime - startTime);
@@ -215,8 +216,8 @@ public class FlowOptimizer implements GraphTraversalAlgorithm {
                 startTime = (int) System.currentTimeMillis();
                 bestPlan = flow;
                 for (int i = 0; i < numIterations; i++) {
-                    NewQuickPick newQuickPick = new NewQuickPick(new Graph(bestPlan), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, disableStats, threads, percentage, numHops);
-                    bestPlan = newQuickPick.execute();
+                    RSS RSS = new RSS(new Graph(bestPlan), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, disableStats, threads, percentage, numHops);
+                    bestPlan = RSS.execute();
                 }
                 endTime = (int) System.currentTimeMillis();
                 duration = (endTime - startTime);
@@ -226,15 +227,15 @@ public class FlowOptimizer implements GraphTraversalAlgorithm {
                 printBestPlanCost(bestPlan);
                 break;
             case "e-escp":
-                NewESCp newESCp = new NewESCp(new Graph(flow), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, disableStats, threads);
-                bestPlan = newESCp.execute();
+                ESCp ESCp = new ESCp(new Graph(flow), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, disableStats, threads);
+                bestPlan = ESCp.execute();
                 printBestPlanCost(bestPlan);
                 break;
             case "e-bescp":
                 startTime = System.currentTimeMillis();
                 bestPlan = flow;
                 for (int i = 0; i < numIterations; i++) {
-                    NewBatchESCp batchESCpAlg = new NewBatchESCp(new Graph(bestPlan), actions, possiblePlans, targetBase, costEstimation, timeout, disableStats, threads, batchSize);
+                    BatchESCp batchESCpAlg = new BatchESCp(new Graph(bestPlan), actions, possiblePlans, targetBase, costEstimation, timeout, disableStats, threads, batchSize);
                     bestPlan = batchESCpAlg.execute();
                 }
                 endTime = System.currentTimeMillis();
@@ -273,10 +274,10 @@ public class FlowOptimizer implements GraphTraversalAlgorithm {
                 startTime = (int) System.currentTimeMillis();
                 bestPlan = flow;
                 for (int i = 0; i < this.numIterations; i++) {
-                    Graph greedyBest = NewGSP.createPlanSpaceGSProgressive(new Graph(bestPlan), actions, cloudOnlyOperatorIds, costEstimation, executor, timeout);
-                    NewGSP.cleanUp();
-                    NewQuickPick newQuickPick = new NewQuickPick(new Graph(greedyBest), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, disableStats, threads, 3000, 4);
-                    bestPlan = newQuickPick.execute();
+                    Graph greedyBest = GSP.createPlanSpaceGSProgressive(new Graph(bestPlan), actions, cloudOnlyOperatorIds, costEstimation, executor, timeout);
+                    GSP.cleanUp();
+                    RSS RSS = new RSS(new Graph(greedyBest), actions, possiblePlans, targetBase, cloudOnlyOperatorIds, siteMappingReverse, platformMappingReverse, costEstimation, timeout, disableStats, threads, 3000, 4);
+                    bestPlan = RSS.execute();
                 }
                 endTime = (int) System.currentTimeMillis();
                 duration = (endTime - startTime);

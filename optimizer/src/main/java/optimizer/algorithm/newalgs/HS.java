@@ -17,7 +17,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class NewHSp {
+public class HS {
     private static final Object POISON_PILL = new Object();
     private CountDownLatch latch;
     private ArrayList<HSpTask> tasks;
@@ -42,12 +42,12 @@ public class NewHSp {
     private final static AtomicInteger plansGeneratedAt = new AtomicInteger(0);
     private final static AtomicInteger plansPrunedAt = new AtomicInteger(0);
 
-    public NewHSp(Graph rootFlow,
-                  ArrayList<Tuple<Integer, Integer>> actions,
-                  Set<Integer> cloudOnlyOperatorIds,
-                  PlanCostEstimatorInterface costEstimation,
-                  int timeout,
-                  int numThreads) {
+    public HS(Graph rootFlow,
+              ArrayList<Tuple<Integer, Integer>> actions,
+              Set<Integer> cloudOnlyOperatorIds,
+              PlanCostEstimatorInterface costEstimation,
+              int timeout,
+              int numThreads) {
         this.rootFlow = rootFlow;
         this.actions = actions;
         this.cloudOnlyOperatorIds = cloudOnlyOperatorIds;
@@ -59,15 +59,15 @@ public class NewHSp {
         this.modelWorkflow = null;
     }
 
-    public NewHSp(Graph rootFlow,
-                  ArrayList<Tuple<Integer, Integer>> actions,
-                  Set<Integer> cloudOnlyOperatorIds,
-                  PlanCostEstimatorInterface costEstimation,
-                  int timeout,
-                  int numThreads,
-                  String modelDirectory,
-                  String modelNetwork,
-                  String modelWorkflow) {
+    public HS(Graph rootFlow,
+              ArrayList<Tuple<Integer, Integer>> actions,
+              Set<Integer> cloudOnlyOperatorIds,
+              PlanCostEstimatorInterface costEstimation,
+              int timeout,
+              int numThreads,
+              String modelDirectory,
+              String modelNetwork,
+              String modelWorkflow) {
         this.rootFlow = rootFlow;
         this.actions = actions;
         this.cloudOnlyOperatorIds = cloudOnlyOperatorIds;

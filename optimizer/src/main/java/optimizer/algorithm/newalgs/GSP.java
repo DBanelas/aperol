@@ -4,7 +4,6 @@ import core.structs.Tuple;
 import optimizer.algorithm.cost.*;
 import optimizer.algorithm.graph.Graph;
 import optimizer.algorithm.graph.Vertex;
-import org.apache.http.impl.client.AIMDBackoffManager;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -26,7 +25,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * Not reverting the action will lead to a wrong algorithm, as for every vertex
  * we will consider the previous actions as well.
  */
-public class NewGSP {
+public class GSP {
     static int bestCost = Integer.MAX_VALUE;
     static int visited = 0;
     private static PlanCostEstimatorInterface costEstimation;
@@ -63,7 +62,7 @@ public class NewGSP {
                                                      ExecutorService executorService,
                                                      int timeout) {
 
-        NewGSP.costEstimation = costEstimation;
+        GSP.costEstimation = costEstimation;
         ScheduledExecutorService statisticsExecutor  = Executors.newSingleThreadScheduledExecutor();
 
         // TODO: This is needed in order for the experiments using the simulations to able to be reproduced.
