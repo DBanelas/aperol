@@ -1,0 +1,14 @@
+rpi3-5.grenoble.cloud:a8-126.grenoble=0.611
+rpi3-5.grenoble.cloud:a8-183.grenoble=0.798
+a8-126.grenoble:a8-153.grenoble=0.666
+a8-126.grenoble:a8-13.grenoble=0.634
+a8-183.grenoble:a8-171.grenoble=0.727
+a8-183.grenoble:a8-165.grenoble=0.62
+a8-153.grenoble:a8-200.grenoble=0.777
+a8-153.grenoble:a8-134.grenoble=0.626
+a8-13.grenoble:a8-137.grenoble=0.954
+a8-13.grenoble:a8-150.grenoble=0.483
+a8-171.grenoble:a8-119.grenoble=0.881
+a8-171.grenoble:a8-48.grenoble=0.459
+a8-165.grenoble:a8-81.grenoble=0.455
+a8-165.grenoble:a8-190.grenoble=0.682

@@ -1,0 +1,173 @@
+{
+  "network": "network_15_1_fitiot",
+  "sites": [
+    {
+      "siteName": "a8-119.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-126.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-13.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-134.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-137.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-150.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-153.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-165.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-171.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-183.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-190.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-200.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-48.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "a8-81.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        }
+      ]
+    },
+    {
+      "siteName": "rpi3-5.grenoble",
+      "availablePlatforms": [
+        {
+          "platformName": "python"
+        },
+        {
+          "platformName": "java"
+        },
+        {
+          "platformName": "flink"
+        }
+      ]
+    }
+  ]
+}
